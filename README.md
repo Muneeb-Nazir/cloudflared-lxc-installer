@@ -417,5 +417,19 @@ Found an issue or have a suggestion? Please report it with:
 - Error messages and logs
 
 ---
+# Key Changes Made:
+- Removed GPG/apt repository method - No more GPG key issues
+- Uses direct binary download from GitHub releases
+- Installs prerequisites (curl, wget, ca-certificates)
+- Verifies binary before moving to system path
+- Service uses /usr/local/bin/cloudflared (where binary is installed)
+- Cleaner installation - No more sudo or GPG verification failures
+
+# Run directly from GitHub
+curl -sSL https://raw.githubusercontent.com/Muneeb-Nazir/cloudflared-lxc-installer/main/install-cloudflared-pve9.sh | bash
+This method is much more reliable and will work on any Debian-based container without GPG or repository issues!
+
+
+
 
 **Note**: This script is community-maintained and not officially supported by Cloudflare or Proxmox. Always test in a non-production environment first.
